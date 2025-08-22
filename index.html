@@ -3,71 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>For Arshu</title>
+  <title>For My Love</title>
 
   <!-- Elegant fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg: #ffe9f0;           /* page background */
-      --pill: #ffe6f0;         /* header pill background */
+    :root {
+      --bg: #ffe9f0;
+      --pill: #fff0f6;
       --text: #2b2b2b;
-      --accent: #ff6aa6;       /* glow/caret color */
-      --maxw: 900px;           /* content max width */
+      --accent: #e75480;
+      --maxw: 900px;
     }
-
-    * { box-sizing: border-box; }
-    body{
-      margin:0;
+    body {
+      margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: Inter, sans-serif;
     }
-    .wrap{
+    .wrap {
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 14px 16px 48px;
+      padding: 16px;
     }
-
-    /* Stylish animated header */
-    .headline{
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      margin: 8px auto 18px;
-      padding: 14px 16px;
+    /* Lovely still header */
+    .headline {
+      margin: 14px auto 22px;
+      padding: 22px 20px;
       background: var(--pill);
-      border-radius: 14px;
-      box-shadow: 0 8px 22px rgba(0,0,0,.08);
+      border-radius: 18px;
       text-align: center;
-      line-height: 1.6;
+      line-height: 1.8;
+      box-shadow: 0 8px 22px rgba(0,0,0,.08);
     }
-    .headline .typing{
-      display:inline-block;
-      font-family: "Playfair Display", serif;
-      font-weight: 700;
-      letter-spacing: .2px;
-      /* Gradient ink for the text */
-      background: linear-gradient(90deg,#222,#444,#222);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-
-      /* Typewriter reveal */
-      white-space: pre-wrap;      /* preserve wrapping */
-      overflow: hidden;
-      border-right: .14em solid var(--accent);
-      /* The steps number should exceed character count so the reveal feels smooth */
-      animation:
-        typing 8.5s steps(140, end) 0s 1 both,
-        caret 1s step-end infinite,
-        glow 3.5s ease-in-out 8.5s infinite; /* start glow after typing ends */
+    .headline h1 {
+      font-family: "Great Vibes", cursive;
+      font-size: 32px;
+      margin: 0 0 12px;
+      color: var(--accent);
+    }
+    .headline p {
+      font-size: 17px;
+      margin: 0;
+      color: #444;
     }
 
     /* Image card */
-    .card{
+    .card {
       max-width: 520px;
       margin: 0 auto;
       background: #fff;
@@ -75,48 +59,29 @@
       padding: 10px;
       box-shadow: 0 12px 32px rgba(0,0,0,.12);
     }
-    .card img{
+    .card img {
       width: 100%;
       height: auto;
-      display:block;
+      display: block;
       border-radius: 12px;
-    }
-
-    /* Keyframes */
-    @keyframes typing{
-      from { width: 0 }
-      to   { width: 100% }
-    }
-    @keyframes caret{
-      0%,100% { border-color: transparent }
-      50%     { border-color: var(--accent) }
-    }
-    @keyframes glow{
-      0%   { text-shadow: 0 0 0 rgba(255,106,166,0.0); }
-      50%  { text-shadow: 0 0 14px rgba(255,106,166,0.45); }
-      100% { text-shadow: 0 0 0 rgba(255,106,166,0.0); }
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 430px){
-      .headline{ padding: 12px 12px; }
-      .headline .typing{ font-size: 16px; }
-    }
-    @media (min-width: 431px){
-      .headline .typing{ font-size: 18px; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <!-- Animated headline -->
+    <!-- Lovely still message -->
     <div class="headline">
-      <span class="typing">
-Oh my dear Arshu, I love you so much you are the best finding in my life and everytime I come closer to you I forget time I forget all the stress that life give me everyday I just feel alive and I just want to all the love I have in my heart and keep it like this for ever, will you be my girlfriend?
-      </span>
+      <h1>My Dearest Arshu ❤️</h1>
+      <p>
+        You are the most beautiful blessing in my life.  
+        Every time I am with you, the world feels lighter,  
+        the stress fades away, and my heart feels whole.  
+        I want to love you endlessly and keep this feeling forever.  
+        Will you be my girlfriend? 💕
+      </p>
     </div>
 
-    <!-- Your image -->
+    <!-- Image -->
     <div class="card">
       <img src="propose.png" alt="Proposal Image">
     </div>
