@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>She Said No 💔</title>
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --card: #ffffff;
+      --shadow: rgba(0,0,0,.14);
+      --accent: #444;
+      --rain: #4a90e2;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      background:var(--bg);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+      color:#222;
+    }
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:18px;
+      padding:18px 16px 32px;
+    }
+    .title{
+      text-align:center;
+      background:#ffe0e6;
+      border-radius:16px;
+      padding:16px 18px;
+      box-shadow:0 8px 22px var(--shadow);
+      max-width:900px;
+      width:100%;
+      font-size:18px;
+      line-height:1.6;
+    }
+    .title h1{
+      margin:0 0 6px;
+      font-weight:700;
+      color:#d32f2f;
+      font-size:28px;
+    }
+    .card{
+      position:relative;
+      max-width:520px;
+      width:100%;
+      background:var(--card);
+      border-radius:18px;
+      padding:10px;
+      box-shadow:0 12px 32px var(--shadow);
+      overflow:hidden;
+    }
+    .card img{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:12px;
+    }
+
+    /* Rain animation */
+    .rain{
+      pointer-events:none;
+      position:absolute;
+      top:20%;
+      left:15%;
+      right:15%;
+      bottom:0;
+      overflow:hidden;
+    }
+    .drop{
+      position:absolute;
+      top:-10%;
+      width:2px;
+      height:12px;
+      background:var(--rain);
+      opacity:.8;
+      animation: fall linear forwards;
+    }
+    @keyframes fall{
+      to { transform: translateY(120vh); opacity:0; }
+    }
+
+    .back{
+      margin-top:6px;
+      text-decoration:none;
+      background:#ffd633;
+      padding:10px 16px;
+      border-radius:10px;
+      font-weight:600;
+      color:#222;
+      box-shadow:0 6px 14px rgba(0,0,0,.1);
+    }
+    .back:active{ transform: translateY(1px); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="title">
+      <h1>She said NO... 💔</h1>
+      Sometimes love hurts. But the rain will pass, and the sun will shine again. 🌧️
+    </div>
+
+    <div class="card">
+      <!-- Use your sad drawing filename here -->
+      <img src="sad.png" alt="She said No">
+
+      <!-- Falling rain layer -->
+      <div class="rain" id="rain"></div>
+    </div>
+
+    <a class="back" href="index.html">⬅️ Back</a>
+  </div>
+
+  <script>
+    const rain = document.getElementById('rain');
+
+    function spawnDrop(){
+      const d = document.createElement('span');
+      d.className = 'drop';
+      d.style.left = Math.random()*100 + '%';
+      d.style.animationDuration = (1 + Math.random()*1.5) + 's';
+      rain.appendChild(d);
+      setTimeout(()=> d.remove(), 3000);
+    }
+
+    setInterval(spawnDrop, 120);
+  </script>
+</body>
+</html>
