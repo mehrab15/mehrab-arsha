@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>She Said YES! 💖</title>
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --card: #ffffff;
+      --shadow: rgba(0,0,0,.14);
+      --accent: #ff5ca8;
+    }
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      background: var(--bg);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+      color:#222;
+    }
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:18px;
+      padding:18px 16px 32px;
+    }
+    .title{
+      text-align:center;
+      background:#fff0f6;
+      border-radius:16px;
+      padding:16px 18px;
+      box-shadow:0 8px 22px var(--shadow);
+      max-width:900px;
+      width:100%;
+      font-size:18px;
+      line-height:1.6;
+    }
+    .title h1{
+      margin:0 0 6px;
+      font-weight:700;
+      color:var(--accent);
+      font-size:28px;
+    }
+    .card{
+      position:relative;
+      max-width:520px;
+      width:100%;
+      background:var(--card);
+      border-radius:18px;
+      padding:10px;
+      box-shadow:0 12px 32px var(--shadow);
+      overflow:hidden; /* clip hearts inside the card */
+    }
+    .card img{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:12px;
+    }
+
+    /* Heart shower */
+    .hearts{
+      pointer-events:none;
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+    }
+    .heart{
+      position:absolute;
+      top:-10%;
+      font-size:18px;
+      animation: fall linear forwards;
+      opacity:.95;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,.15));
+    }
+    @keyframes fall{
+      0%   { transform: translateY(-10%) scale(1); opacity: 0; }
+      10%  { opacity: 1; }
+      100% { transform: translateY(115%) rotate(25deg) scale(1.1); opacity: .9; }
+    }
+
+    .back{
+      margin-top:6px;
+      text-decoration:none;
+      background:#ffd633;
+      padding:10px 16px;
+      border-radius:10px;
+      font-weight:600;
+      color:#222;
+      box-shadow:0 6px 14px rgba(0,0,0,.1);
+    }
+    .back:active{ transform: translateY(1px); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="title">
+      <h1>She said YES! 💞</h1>
+      Yay! My heart is doing cartwheels. Thank you for choosing me. Here’s to us, to love, and to forever. 💐
+    </div>
+
+    <div class="card">
+      <!-- Use your accepted image filename here -->
+      <img src="Accepted.png" alt="She said Yes">
+
+      <!-- Falling hearts layer -->
+      <div class="hearts" id="hearts"></div>
+    </div>
+
+    <a class="back" href="index.html">⬅️ Back</a>
+  </div>
+
+  <script>
+    // Create endless falling hearts
+    const container = document.getElementById('hearts');
+
+    function spawnHeart(){
+      const h = document.createElement('span');
+      h.className = 'heart';
+      // Randomize position, size, color, duration, delay
+      const left = Math.random()*100;         // percentage
+      const size = 16 + Math.random()*18;     // px
+      const duration = 4 + Math.random()*4;   // seconds
+
+      // Pick a pinkish hue
+      const colors = ['#ff77b7','#ff5ca8','#ff8ccf','#ff99cc','#ff6fa4'];
+      h.textContent = '♥';
+      h.style.left = left + '%';
+      h.style.fontSize = size + 'px';
+      h.style.color = colors[Math.floor(Math.random()*colors.length)];
+      h.style.animationDuration = duration + 's';
+
+      container.appendChild(h);
+
+      // Remove after animation completes
+      setTimeout(()=> h.remove(), duration*1000 + 200);
+    }
+
+    // Spawn hearts continuously
+    setInterval(spawnHeart, 180); // ~5–6 hearts/sec
+    // Burst on load
+    for(let i=0;i<20;i++) setTimeout(spawnHeart, i*120);
+  </script>
+</body>
+</html>
