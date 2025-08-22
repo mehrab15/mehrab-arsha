@@ -11,11 +11,12 @@
 
   <style>
     :root {
-      --bg: #ffffff;           /* page background now white */
-      --pill: #fff0f6;         /* header box */
+      --bg: #ffffff;         
+      --pill: #fff0f6;       
       --text: #2b2b2b;
       --accent: #e75480;
       --maxw: 900px;
+      --btn: #ffd633;        /* Yellow button */
     }
     body {
       margin: 0;
@@ -27,6 +28,7 @@
       max-width: var(--maxw);
       margin: 0 auto;
       padding: 16px;
+      text-align: center;
     }
     /* Lovely still header */
     .headline {
@@ -53,7 +55,7 @@
     /* Image card */
     .card {
       max-width: 520px;
-      margin: 0 auto;
+      margin: 0 auto 24px;
       background: #fff;
       border-radius: 18px;
       padding: 10px;
@@ -65,6 +67,27 @@
       display: block;
       border-radius: 12px;
     }
+
+    /* Buttons */
+    .buttons {
+      margin-top: 18px;
+    }
+    .buttons button {
+      background: var(--btn);
+      border: none;
+      border-radius: 10px;
+      padding: 12px 28px;
+      margin: 0 12px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 14px rgba(0,0,0,.1);
+    }
+    .buttons button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,.15);
+    }
   </style>
 </head>
 <body>
@@ -75,7 +98,7 @@
       <p>
         You are the most beautiful blessing in my life.  
         Every time I am with you, the world feels lighter,  
-        The stress fades away, and my heart feels whole.  
+        the stress fades away, and my heart feels whole.  
         I want to love you endlessly and keep this feeling forever.  
         Will you be my girlfriend? 💕
       </p>
@@ -84,6 +107,12 @@
     <!-- Image -->
     <div class="card">
       <img src="propose.png" alt="Proposal Image">
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button onclick="alert('Yaaay!! 💖 You said YES!')">Yes 🥰</button>
+      <button onclick="alert('Oh no 💔 You said NO...')">No 😡</button>
     </div>
   </div>
 </body>
